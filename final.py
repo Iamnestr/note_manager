@@ -17,6 +17,6 @@ for i in range(3):
 
 
 # Выводим собранные данные
-print("Собранная информация о заметке:")
+print("\nСобранная информация о заметке:")
 for key, value in note.items():
     print(f"{key.capitalize()}: {value}")
