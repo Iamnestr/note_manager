@@ -11,5 +11,5 @@ while True:
 # Выводим все заголовки
 print('\nЗаголовки заметки:')
 for i in range(range_):
-    print(f"-", titles[i])
+    print("-", titles[i])
 
