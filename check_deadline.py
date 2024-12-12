@@ -18,9 +18,9 @@ while format_ == True:
 # Сравниваем дату дедлайна заметки с текущей датой.
 if date_2 < date_1:
     date_difference = date_1 - date_2
-    print(f"До дедлайна осталось {date_difference.days} д.")
+    print(f"Внимание! Дедлайн истёк {date_difference.days} д. назад.")
 elif date_2 > date_1:
     date_difference = date_2 - date_1
-    print(f"Внимание! Дедлайн истёк {date_difference.days} д. назад.")
+    print(f"До дедлайна осталось {date_difference.days} д.")
 else:
     print("Дедлайн сегодня!")
