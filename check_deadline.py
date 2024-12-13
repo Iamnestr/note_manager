@@ -5,9 +5,10 @@ print("Текущая дата:", current_date)
 date_format = "%d-%m-%Y"
 date_1 = datetime.strptime(current_date, date_format)
 format_ = True
+date_2 = None # ввел, чтобы PyCharm не ругался
 
 # Вводим дату дедлайна заметки и проверяем корректность ввода.
-while format_ == True:
+while format_:
     issue_date = input("Введите дату истечения заметки в формате 'день-месяц-год': ")
     try:
         date_2 = datetime.strptime(issue_date, date_format)
