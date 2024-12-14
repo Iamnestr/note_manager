@@ -1,8 +1,11 @@
 # Сохраненные заметки
 note_1 = {'Имя': 'Алексей', 'Заголовок': 'Список покупок', 'Описание': 'Купить продукты на неделю'}
 note_2 = {'Имя': 'Мария', 'Заголовок': 'Учеба', 'Описание': 'Подготовиться к экзамену'}
-notes = [note_1, note_2]
-caunt = 2 # кол-во заметок
+note_3 = {'Имя': 'Алексей', 'Заголовок': 'Учеба', 'Описание': 'Оно мне надо)'}
+notes = [note_1, note_2, note_3]
+notes_del = []
+caunt = 3 # кол-во заметок
+caunt_del = 0 # кол-во заметок для удаления
 note_faund = True # для определения результата поиска
 
 # Отображаем текущие заметки:
@@ -16,27 +19,35 @@ for i in range(caunt):
 # Пользователь вводит критерий для удаления:
 delete = input('\nВведите имя пользователя или заголовок для удаления заметки: ')
 
-#  Поиск и удаление заметки соответствующей критерию
+#  Поиск и сбор заметок соответствующих критерию в отдельный словарь
 for i in range(caunt):
     note = notes[i]
     if (note['Имя'].casefold() == delete.casefold() or
             note['Заголовок'].casefold() == delete.casefold()):
-        notes.remove(note)
         caunt -= 1
         note_faund = False
-        break
+        notes_del.append(note)
+        caunt_del += 1
 
 # Если заметок по критерию не найдено
 if note_faund:
     print('Заметок с таким именем пользователя или заголовком не найдено')
 
-# Вывод обновленного списка
+# Удаление заметок соответствующих критерию после разрешения
 else:
-    print ('Успешно удалено. Остались следующие заметки:')
-    for j in range(caunt):
-        print(f"{j + 1}.", end=' ')
-        note = notes[j]
-        for key, value in note.items():
-            print(f"{key.capitalize()}: {value}")
+    yes_or_no = input("\nВы уверены, что хотите удалить заметки? (да/нет): ")
+    if yes_or_no == "да":
+        for t in range(caunt_del):
+            notes.remove(notes_del[t])
+        print ('Успешно удалено. Остались следующие заметки:')
+
+        # Вывод обновленного списка
+        for j in range(caunt):
+            print(f"{j + 1}.", end=' ')
+            note = notes[j]
+            for key, value in note.items():
+                print(f"{key.capitalize()}: {value}")
+    else:
+        print('Заметки не удалены.')
 
 
