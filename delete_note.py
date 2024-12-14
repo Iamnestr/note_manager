@@ -21,10 +21,12 @@ for i in range(caunt):
     note = notes[i]
     if (note['Имя'].casefold() == delete.casefold() or
             note['Заголовок'].casefold() == delete.casefold()):
-        notes.remove(note)
-        caunt -= 1
-        note_faund = False
-        break
+        yes_or_no = input("Вы уверены, что хотите удалить заметку? (да/нет): ")
+        if yes_or_no == "да":
+            notes.remove(note)
+            caunt -= 1
+            note_faund = False
+            break
 
 # Если заметок по критерию не найдено
 if note_faund:
