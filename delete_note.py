@@ -6,7 +6,6 @@ notes = [note_1, note_2, note_3]
 notes_del = []
 caunt = 3 # кол-во заметок
 caunt_del = 0 # кол-во заметок для удаления
-note_faund = True # для определения результата поиска
 
 # Отображаем текущие заметки:
 print('Текущие заметки:')
@@ -25,12 +24,11 @@ for i in range(caunt):
     if (note['Имя'].casefold() == delete.casefold() or
             note['Заголовок'].casefold() == delete.casefold()):
         caunt -= 1
-        note_faund = False
         notes_del.append(note)
         caunt_del += 1
 
 # Если заметок по критерию не найдено
-if note_faund:
+if not notes_del:
     print('Заметок с таким именем пользователя или заголовком не найдено')
 
 # Удаление заметок соответствующих критерию после разрешения
