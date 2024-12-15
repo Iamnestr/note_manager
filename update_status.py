@@ -8,7 +8,7 @@ print(f"Текущий статус заметки: '{status}'")
 while True:
     status_num = int(input("Выберите новый статус заметки:"
                            " \n1. выполнено \n2. в процессе \n3. отложено \nВведите цифру: "))
-    if 1 <= status_num <= 3:
+    if status_num in [1, 2, 3]:
         status = status_all[status_num]
         break
     else:
