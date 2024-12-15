@@ -1,3 +1,4 @@
+# Обработка дедлайнов
 # Определяем текущую дату
 from datetime import datetime
 current_date = datetime.today().strftime('%d-%m-%Y')
