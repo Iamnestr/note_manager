@@ -1,7 +1,7 @@
 # Функция обновления заметки
 from datetime import datetime
 # Задаем пример заметки
-note = {'username': 'Алексей',
+note_1 = {'username': 'Алексей',
             'title': 'Список покупок',
             'content': 'Купить продукты на неделю',
             'status': 'новая',
@@ -9,7 +9,7 @@ note = {'username': 'Алексей',
             'issue_date': '30-11-2024'}
 
 # Вызываем функцию для обновления заметки
-def update_note():
+def update_note(note):
     # Выводим текущие данные заметки
     print('Текущие данные заметки:\n', note)
 
@@ -18,7 +18,7 @@ def update_note():
 
     # Выбираем поле для обновления
     while True:
-        update = input('Какие данные вы хотите обновить? (username, title, content, status, issue_date): ')
+        update = input('\nКакие данные вы хотите обновить? (username, title, content, status, issue_date): ')
 
         # Проверяем корректность ввода
         if update not in note_key:
@@ -38,4 +38,4 @@ def update_note():
     return note
 
 # Вывод обновленной заметки
-print('Заметка обновлена:\n', update_note())
+print('\nЗаметка обновлена:\n', update_note(note_1))
