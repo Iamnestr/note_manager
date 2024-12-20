@@ -1,5 +1,7 @@
-# Создаем лист для сохранения заметок
-notes_total = []
+# Функция отображения заметок
+
+# Создаем лист для заметок, для проверки работы функции
+notes = []
 
 #  Создаем цикл для добавления заметок в лист notes
 while True:
@@ -12,29 +14,29 @@ while True:
             "Дата дедлайна": input("Введите дедлайн заметки в формате 'день-месяц-год': ")}
 
     if list(note_next.values())[1] != '' and list(note_next.values())[2] != '':
-        # Сохраняем заметки в список
-        notes_total.append(note_next)
+        # Сохраняем заметку в список
+        notes.append(note_next)
     else:
         print("Заголовок и описание пусты, поэтому заметка не сохранена")
         note_next = {}
-
 
     # Реализуем добавление новой заметки
     yes_or_no = input("\nХотите добавить заметку? (да/нет): ")
     if yes_or_no == "нет":
         break
 
-def display_notes(notes):
-    if not notes:
+def display_notes(notes_total):
+    if not notes_total:
         print("У вас нет сохранённых заметок.")
     else:
         print("\nСписок заметок:")
         print("-----------------")
-        for i in range(len(notes)):
+        for i in range(len(notes_total)):
             print(f"Заметка № {i+1}:")
-            note = notes[i]
+            note = notes_total[i]
             for key, value in note.items():
                 print(f"{key.capitalize()}: {value}")
             print("-----------------")
 
-display_notes(notes_total)
+# Обращаемся к функции для отображения заметок
+display_notes(notes)

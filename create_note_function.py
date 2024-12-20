@@ -25,5 +25,7 @@ def create_note():
             print("Формат даты неверный. Попробуй еще раз.")
     return note
 
+new_note = create_note()
+
 # Выводим собранную информацию
-print("Заметка создана:", create_note())
+print("Заметка создана:", new_note)
