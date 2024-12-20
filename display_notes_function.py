@@ -11,28 +11,30 @@ while True:
             "Дата создания": input("Введите дату создания заметки в формате 'день-месяц-год': "),
             "Дата дедлайна": input("Введите дедлайн заметки в формате 'день-месяц-год': ")}
 
-    for j in note_next.values():
-        if j != '':
-            # Сохраняем заметки в список
-            notes_total.append(note_next)
-            break
+    if list(note_next.values())[1] != '' and list(note_next.values())[2] != '':
+        # Сохраняем заметки в список
+        notes_total.append(note_next)
+    else:
+        print("Заголовок и описание пусты, поэтому заметка не сохранена")
+        note_next = {}
 
 
     # Реализуем добавление новой заметки
-    yes_or_no = input("\nХотите добавить ещё одну заметку? (да/нет): ")
+    yes_or_no = input("\nХотите добавить заметку? (да/нет): ")
     if yes_or_no == "нет":
         break
 
 def display_notes(notes):
     if not notes:
-        print("Копировать код\nУ вас нет сохранённых заметок.")
+        print("У вас нет сохранённых заметок.")
     else:
-        print("\t-----------------")
+        print("\nСписок заметок:")
+        print("-----------------")
         for i in range(len(notes)):
-            print(f"\tЗаметка № {i+1}:")
+            print(f"Заметка № {i+1}:")
             note = notes[i]
             for key, value in note.items():
-                print(f"\t{key.capitalize()}: {value}")
-            print("\t-----------------")
+                print(f"{key.capitalize()}: {value}")
+            print("-----------------")
 
 display_notes(notes_total)
