@@ -1,4 +1,16 @@
 # Функция отображения заметок
+def display_notes(notes_total):
+    if not notes_total:
+        print("У вас нет сохранённых заметок.")
+    else:
+        print("\nСписок заметок:")
+        print("-----------------")
+        for i in range(len(notes_total)):
+            print(f"Заметка № {i+1}:")
+            note = notes_total[i]
+            for key, value in note.items():
+                print(f"{key.capitalize()}: {value}")
+            print("-----------------")
 
 # Создаем лист для заметок, для проверки работы функции
 notes = []
@@ -25,19 +37,6 @@ while True:
     yes_or_no = input("\nХотите добавить заметку? (да/нет): ")
     if yes_or_no == "нет":
         break
-
-def display_notes(notes_total):
-    if not notes_total:
-        print("У вас нет сохранённых заметок.")
-    else:
-        print("\nСписок заметок:")
-        print("-----------------")
-        for i in range(len(notes_total)):
-            print(f"Заметка № {i+1}:")
-            note = notes_total[i]
-            for key, value in note.items():
-                print(f"{key.capitalize()}: {value}")
-            print("-----------------")
 
 # Обращаемся к функции для отображения заметок
 display_notes(notes)
