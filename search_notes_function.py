@@ -12,7 +12,7 @@ def search_notes(notes, keyword=None, status=None):
         return values.find(keyword.lower())
 
     # Проверяем какой критерий для поиска задан, потом ищем и собираем их в один лист
-    # Поиск по ключевому слову и статусу.")
+    # Поиск по ключевому слову и статусу
     if keyword is not None and status is not None:
         for i in range(len(notes)):
             note = notes[i]
