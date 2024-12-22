@@ -5,9 +5,9 @@ def display_notes(notes_total):
     else:
         print("\nСписок заметок:")
         print("-----------------")
-        for i in range(len(notes_total)):
-            print(f"Заметка № {i+1}:")
-            note = notes_total[i]
+        index_net = 0
+        for note in notes_total:
+            print(f"Заметка № {index_net + 1}:")
             for key, value in note.items():
                 print(f"{key.capitalize()}: {value}")
             print("-----------------")

@@ -23,7 +23,7 @@ def update_note(note):
         # Проверяем корректность ввода
         if update not in note_key:
             print('Некорректный выбор поля. Попробуйте еще раз.')
-        elif update == note_key[4]:
+        elif update == note_key[-1]:
             while True:
                 note[update] = input(f'Введите новое значение для {update} (день-месяц-год): ')
                 try:

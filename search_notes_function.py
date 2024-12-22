@@ -14,20 +14,17 @@ def search_notes(notes, keyword=None, status=None):
     # Проверяем какой критерий для поиска задан, потом ищем и собираем их в один лист
     # Поиск по ключевому слову и статусу
     if keyword is not None and status is not None:
-        for i in range(len(notes)):
-            note = notes[i]
+        for note in notes:
             if values_all() >= 0 and status.lower() == note['status'].lower():
                 notes_found.append(note)
     # Поиск по ключевому слову
     elif keyword is not None:
-        for j in range(len(notes)):
-            note = notes[j]
+        for note in notes:
             if values_all() >= 0:
                 notes_found.append(note)
     # Поиск по статусу
     elif  status is not None:
-        for l in range(len(notes)):
-            note = notes[l]
+        for note in notes:
             if status.lower() == note['status'].lower():
                 notes_found.append(note)
     return notes_found
