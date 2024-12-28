@@ -2,7 +2,7 @@
 import yaml
 
 # Функция для сохранения и загружения заметок в файл
-def save_notes_to_file(notes):
+def save_notes_to_file(notes, filename):
 
     # Смена ключей в словарях
     for note_keys in range(len(notes)):
@@ -10,7 +10,7 @@ def save_notes_to_file(notes):
         notes[note_keys] = dict(zip(list_keys, list(notes[note_keys].values())))
 
     # Сохранение и загрузка заметок в файл
-    with open('filename.txt', 'w', encoding='utf-8') as file:
+    with open(filename, 'w', encoding='utf-8') as file:
         file.write(yaml.dump(notes, allow_unicode=True, sort_keys=False))
 
 # Пример списка заметок
@@ -22,7 +22,7 @@ notes_all = [{'username': 'Алексей', 'title': 'Список покупо�
            'status': 'выполнено', 'created_date': '20-11-2024', 'issue_date': '26-11-2024'}]
 
 # Вызов функции для сохранения и загружения заметок
-save_notes_to_file(notes_all)
+save_notes_to_file(notes_all, 'filename.txt')
 
 
 

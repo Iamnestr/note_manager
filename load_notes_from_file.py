@@ -2,8 +2,8 @@
 import yaml
 
 # Функция для выгрузки заметок из файла
-def save_notes_to_file():
-    with open('filename.txt', 'r', encoding='utf-8') as file:
+def save_notes_to_file(filename):
+    with open(filename, 'r', encoding='utf-8') as file:
         notes = yaml.safe_load(file.read())
 
     # Смена ключей в словарях
@@ -13,4 +13,4 @@ def save_notes_to_file():
     print(notes)
 
 # Функция для выгрузки заметок из файла
-save_notes_to_file()
+save_notes_to_file('filename.txt')
