@@ -17,12 +17,5 @@ save_notes_to_file(notes_all)
 
 
 
-# Имя пользователя: {username}
-# Заголовок: {title}
-# Описание: {content}
-# Статус: {status}
-# Дата создания: {created_date}
-# Дедлайн: {issue_date}
-
 
 
