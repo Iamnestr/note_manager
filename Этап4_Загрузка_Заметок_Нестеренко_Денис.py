@@ -2,7 +2,7 @@
 import yaml
 
 # Функция для выгрузки заметок из файла
-def save_notes_to_file(filename):
+def load_notes_from_file(filename):
     with open(filename, 'r', encoding='utf-8') as file:
         notes = yaml.safe_load(file.read())
 
@@ -13,4 +13,4 @@ def save_notes_to_file(filename):
     print(notes)
 
 # Функция для выгрузки заметок из файла
-save_notes_to_file('notes.txt')
+load_notes_from_file('notes.txt')
