@@ -13,4 +13,4 @@ def save_notes_to_file(filename):
     print(notes)
 
 # Функция для выгрузки заметок из файла
-save_notes_to_file('filename.txt')
+save_notes_to_file('notes.txt')

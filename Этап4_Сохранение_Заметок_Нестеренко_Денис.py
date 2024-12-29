@@ -22,7 +22,7 @@ notes_all = [{'username': 'Алексей', 'title': 'Список покупо�
            'status': 'выполнено', 'created_date': '20-11-2024', 'issue_date': '26-11-2024'}]
 
 # Вызов функции для сохранения и загружения заметок
-save_notes_to_file(notes_all, 'filename.txt')
+save_notes_to_file(notes_all, 'notes.txt')
 
 
 
