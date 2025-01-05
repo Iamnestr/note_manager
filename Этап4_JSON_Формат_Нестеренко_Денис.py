@@ -11,7 +11,7 @@ def save_notes_json(notes, filename):
 
     # Сохранение и загрузка заметок в файл
     with open(filename, 'w', encoding='utf-8') as file:
-        j_file = json.dump(notes, file, indent=4, ensure_ascii=False)
+        json.dump(notes, file, indent=4, ensure_ascii=False)
 
 # Пример списка заметок
 notes_all = [{'username': 'Алексей', 'title': 'Список покупок', 'content': 'Купить продукты',
