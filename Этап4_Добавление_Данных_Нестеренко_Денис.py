@@ -22,4 +22,4 @@ new_notes = [{"username": "Мария", "title": "План работы", "conte
               "status": "в процессе", "created_date": "27-11-2024", "issue_date": "28-11-2024"}]
 
 # Вызов функции для добавления заметок в файл
-append_notes_to_file(new_notes, "notes.txt")
+append_notes_to_file(new_notes, "notes.yml")

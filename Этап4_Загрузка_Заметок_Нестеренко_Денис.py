@@ -13,4 +13,4 @@ def load_notes_from_file(filename):
     print(notes)
 
 # Функция для выгрузки заметок из файла
-load_notes_from_file('notes.txt')
+load_notes_from_file('notes.yml')

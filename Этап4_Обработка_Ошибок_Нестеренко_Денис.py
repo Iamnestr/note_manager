@@ -1,4 +1,4 @@
-filename = 'corrupted_file.txt'
+filename = 'corrupted_file.yml'
 try:
     with open(filename) as file:
         print(file.read())
